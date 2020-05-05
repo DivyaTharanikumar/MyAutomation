@@ -7,8 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class Page(object):
 
-    def __init__(self, driver, base_url='http://www.app.com/'):
-        self.base_url = base_url
+    def __init__(self, driver):
         self.driver = driver
         self.timeout = 30
 
@@ -16,7 +15,6 @@ class Page(object):
         return self.driver.find_element(*locator)
 
     def open(self, url):
-        url = self.base_url + url
         self.driver.get(url)
 
     def get_title(self):
