@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 class TestPages(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path='C:\\Users\\srifo\\chromedriver_win32\\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path='..\\chromedriver.exe')
         self.driver.get("http://www.amazon.com")
 
     def test_page_load(self):
@@ -19,8 +19,8 @@ class TestPages(unittest.TestCase):
     def test_search_item(self):
         print("\n" + str(test_cases(1)))
         page = MainPage(self.driver)
-        search_result = page.search_item("Nexus 5")
-        self.assertIn("Nexus 5", search_result)
+        search_result = page.search_item("lenovo")
+        self.assertIn("lenovo", search_result)
 
     def test_sign_up_button(self):
         print("\n" + str(test_cases(2)))
