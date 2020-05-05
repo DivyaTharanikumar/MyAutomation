@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class MainPage(Page):
     def __init__(self, driver):
-        self.locator = MainPageLocatars
+        self.locator = MainPageLocators
         super().__init__(driver)
 
     def check_page_loaded(self):
@@ -34,7 +34,7 @@ class MainPage(Page):
 
 class LoginPage(Page):
     def __init__(self, driver):
-        self.locator = LoginPageLocatars
+        self.locator = LoginPageLocators
         super(LoginPage, self).__init__(driver)
 
 
