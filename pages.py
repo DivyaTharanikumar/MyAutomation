@@ -18,7 +18,6 @@ class MainPage(Page):
 
     def search_item(self, item):
         self.find_element(*self.locator.SEARCH).send_keys(item)
-        time.sleep(20)
         self.find_element(*self.locator.SEARCH).send_keys(Keys.ENTER)
         return self.find_element(*self.locator.SEARCH_LIST).text
 
@@ -40,17 +39,15 @@ class LoginPage(Page):
 
 
     def login_with_valid_user(self):
-        self.find_element(*self.locator.EMAIL).send_keys("tdivya88@gmail.com")
-        self.find_element(*self.locator.CONTINUE).click()
-        self.find_element(*self.locator.PASSWORD).send_keys("lakshna13")
+        self.find_element(*self.locator.EMAIL).send_keys("userid")
+        self.find_element(*self.locator.EMAIL).send_keys(Keys.RETURN)
+        self.find_element(*self.locator.PASSWORD).send_keys("password")
         self.find_element(*self.locator.SUBMIT).click()
         return HomePage(self.driver)
 
     def login_with_in_valid_user(self):
-        self.find_element(*self.locator.EMAIL).send_keys("tdivya88@gmoil.com")
-        time.sleep(10)
-        self.find_element(By.ID,"continue").click()
-        time.sleep(10)
+        self.find_element(*self.locator.EMAIL).send_keys("userid@gmoil.com")
+        self.find_element(*self.locator.EMAIL).send_keys(Keys.RETURN)
         return self.find_element(*self.locator.ERROR_MESSAGE).text
 
 
