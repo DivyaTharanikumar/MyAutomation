@@ -2,17 +2,16 @@ from selenium.webdriver.common.by import By
 
 # for maintainability we can separate web objects by page name
 
-class MainPageLocatars(object):
+class MainPageLocators(object):
   LOGO          = (By.ID, 'nav-logo')
   ACCOUNT       = (By.ID, 'nav-link-accountList')
-  SIGNUP        = (By.PARTIAL_LINK_TEXT, 'Start here')
-  LOGIN         = (By.PARTIAL_LINK_TEXT,'Sign in')
+  SIGNUP        = (By.LINK_TEXT, 'Start here')
+  LOGIN         = (By.LINK_TEXT,'Sign in')
   SEARCH        = (By.ID, 'twotabsearchtextbox')
-  SEARCH_LIST   = (By.PARTIAL_LINK_TEXT,'Nexus 5')
+  SEARCH_LIST   = (By.LINK_TEXT,'lenovo')
 
-class LoginPageLocatars(object):
+class LoginPageLocators(object):
   EMAIL         = (By.ID, 'ap_email')
-  CONTINUE      = (By.ID, 'continue')
   PASSWORD      = (By.ID, 'ap_password')
   SUBMIT        = (By.ID, 'signInSubmit')
   ERROR_MESSAGE = (By.ID, 'auth-error-message-box')
